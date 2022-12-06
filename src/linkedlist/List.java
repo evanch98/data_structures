@@ -1,7 +1,7 @@
 package linkedlist;
 
 /**
- * linkedlist.List ADT
+ * List ADT
  */
 public interface List<E> {
 
