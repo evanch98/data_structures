@@ -11,16 +11,10 @@ public interface List<E> {
     public void clear();
 
     /**
-     * Push an element at the start of the list
+     * Insert an element into the list
      * @param item The element to be inserted
      */
-    public void push(E item);
-
-    /**
-     * Append an element at the end of the list
-     * @param item The element to be inserted
-     */
-    public void append(E item);
+    public void insert(E item);
 
     /**
      * Remove and return the removed element
