@@ -83,7 +83,16 @@ public class LinkedList<E extends Comparable<E>> implements List<E>{
 
     @Override
     public boolean find(E item) {
-        // TODO: Implement the method
+        Node<E> runner = head;    // a node for traversing the list
+        while (runner != null) {
+            // Go through the list looking at the data in each node.
+            if (runner.getData().equals(item)) {
+                // If the item is found, return true
+                return true;
+            }
+            runner = runner.getNext();    // move on to the next node
+        }
+        // At this point, it means the item is not in the list; therefore, return false
         return false;
     }
 
