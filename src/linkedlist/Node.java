@@ -4,7 +4,7 @@ package linkedlist;
  * Represent the node in the LinkedList
  * @param <E> The data type of the node
  */
-public class Node<E> {
+public class Node<E extends Comparable<E>> {
 
     private E data;    // data of the node
     private Node<E> next;    // pointer to the next node

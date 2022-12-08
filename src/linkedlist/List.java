@@ -3,7 +3,7 @@ package linkedlist;
 /**
  * List ADT
  */
-public interface List<E> {
+public interface List<E extends Comparable<E>> {
 
     /**
      * Remove all contents from the list
