@@ -10,6 +10,9 @@ public class Test {
         linkedList.insert(1);
         linkedList.insert(7);
         linkedList.insert(10);
+        System.out.println("Traversing the list");
+        linkedList.traverse();
+        System.out.println();
         System.out.println("Length of the list: " + linkedList.length());
         System.out.print("10 is found in the list: ");
         System.out.println(linkedList.find(10));
