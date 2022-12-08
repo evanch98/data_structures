@@ -104,7 +104,7 @@ public class LinkedList<E extends Comparable<E>> implements List<E>{
             // If the head is null, the list empty.
             System.out.println("The list is empty.");
         }
-        Node<E> runner = head.getNext();    // a node for traversing the list starting from the second node
+        Node<E> runner = head;    // a node for traversing the list
         while (runner != null) {
             System.out.print(runner.getData().toString() + " ");    // print out the current node item
             runner = runner.getNext();    // move on to the next node
