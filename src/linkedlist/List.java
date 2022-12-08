@@ -19,9 +19,9 @@ public interface List<E extends Comparable<E>> {
     /**
      * Remove and return the removed element
      * @param item The element to be removed
-     * @return The element that was removed
+     * @return true if the item is deleted successfully; false otherwise
      */
-    public E remove(E item);
+    public boolean remove(E item);
 
     /**
      * Find the element in the list
