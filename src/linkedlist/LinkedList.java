@@ -98,6 +98,11 @@ public class LinkedList<E extends Comparable<E>> implements List<E>{
 
     @Override
     public void traverse() {
-        // TODO: Implement the method
+        // For the sake of simplicity, this method will only print out the item in the list.
+        Node<E> runner = head;    // a node for traversing the list
+        while (runner != null) {
+            System.out.println(runner.getData().toString());    // print out the current node item
+            runner = runner.getNext();    // move on to the next node
+        }
     }
 }
