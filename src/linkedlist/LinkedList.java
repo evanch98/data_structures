@@ -42,14 +42,43 @@ public class LinkedList<E extends Comparable<E>> implements List<E>{
             }
             newNode.setNext(runner);
             previous.setNext(newNode);
-            length++;    // increment the length of the list
         }
+        length++;    // increment the length of the list
     }
 
     @Override
-    public E remove(E item) {
-        // TODO: Implement the method
-        return null;
+    public boolean remove(E item) {
+        if (head == null) {
+            // If head is null, the list empty. Therefore, return null.
+            return false;
+        } else if (head.getData().equals(item)) {
+            // If the head is the item to be removed, the node next to the head becomes
+            // the head of the list.
+            head = head.getNext();    // the node next to the head is now the head
+            length--;
+            return true;
+        } else {
+            // The item to be deleted is somewhere beyond the head the list.
+            // Traverse the list to find the item to be deleted.
+            Node<E> runner = head.getNext();    // a node for traversing the list
+            Node<E> previous = head;            // always points to the node preceding runner
+            while (runner != null && runner.getData().compareTo(item) < 0) {
+                // Move the runner and previous along the list until the runner reach the end of
+                // the list or finds an element that is greater than or equal to the item to be deleted.
+                previous = runner;
+                runner = runner.getNext();
+            }
+            if (runner != null && runner.getData().equals(item)) {
+                // Runner points to the node to be deleted.
+                // Remove it by changing the pointer in the previous node.
+                previous.setNext(runner.getNext());
+                length--;
+                return true;
+            } else {
+                // The item does not exist in the list.
+                return false;
+            }
+        }
     }
 
     @Override
