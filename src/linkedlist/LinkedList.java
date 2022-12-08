@@ -100,9 +100,13 @@ public class LinkedList<E extends Comparable<E>> implements List<E>{
     @Override
     public void traverse() {
         // For the sake of simplicity, this method will only print out the item in the list.
-        Node<E> runner = head;    // a node for traversing the list
+        if (head == null) {
+            // If the head is null, the list empty.
+            System.out.println("The list is empty.");
+        }
+        Node<E> runner = head.getNext();    // a node for traversing the list starting from the second node
         while (runner != null) {
-            System.out.println(runner.getData().toString());    // print out the current node item
+            System.out.print(runner.getData().toString() + " ");    // print out the current node item
             runner = runner.getNext();    // move on to the next node
         }
     }
