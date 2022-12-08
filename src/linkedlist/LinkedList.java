@@ -8,6 +8,7 @@ public class LinkedList<E extends Comparable<E>> implements List<E>{
     @Override
     public void clear() {
         head = null;
+        length = 0;
     }
 
     @Override
