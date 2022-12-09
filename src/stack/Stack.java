@@ -35,17 +35,29 @@ public class Stack<E extends Comparable<E>> implements List<E> {
     public boolean find(E item) {
         Node<E> runner = top;    // a node for traversing the list
         while (runner != null) {
+            // Go through the list looking at the data in each node.
             if (runner.getData().equals(item)) {
+                // If the item is found, return true
                 return true;
             }
-            runner = runner.getNext();
+            runner = runner.getNext();    // move on to the next node
         }
+        // At this point, it means the item is not in the list; therefore, return false
         return false;
     }
 
     @Override
     public void traverse() {
-        // TODO: Implement the traverse method
+        // For the sake of simplicity, this method will only print out the item in the list.
+        if (top == null) {
+            // If the head is null, the list empty.
+            System.out.println("The stack is empty.");
+        }
+        Node<E> runner = top;    // a node for traversing the list
+        while (runner != null) {
+            System.out.print(runner.getData().toString() + " ");    // print out the current node item
+            runner = runner.getNext();    // move on to the next node
+        }
     }
 
     @Override
