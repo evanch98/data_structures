@@ -22,7 +22,7 @@ public class Stack<E extends Comparable<E>> implements List<E> {
     }
 
     @Override
-    public E pop()  {
+    public E pop() {
         if (top == null) {
             throw new IllegalStateException("Cannot pop from an empty stack");
         }
