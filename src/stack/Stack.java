@@ -16,7 +16,9 @@ public class Stack<E extends Comparable<E>> implements List<E> {
 
     @Override
     public void push(E item) {
-        // TODO: Implement the push method
+        Node<E> newNode = new Node<>(item);    // a node to hold the new item
+        newNode.setNext(top);    // the new node points to the old top
+        top = newNode;           // the new item is now on top
     }
 
     @Override
