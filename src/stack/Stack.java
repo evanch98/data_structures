@@ -19,6 +19,7 @@ public class Stack<E extends Comparable<E>> implements List<E> {
         Node<E> newNode = new Node<>(item);    // a node to hold the new item
         newNode.setNext(top);    // the new node points to the old top
         top = newNode;           // the new item is now on top
+        length++;    // increment the length
     }
 
     @Override
@@ -28,6 +29,7 @@ public class Stack<E extends Comparable<E>> implements List<E> {
         }
         E topIem = top.getData();    // the item that is being popped
         top = top.getNext();         // the second item is now on top
+        length--;    // decrement the length
         return topIem;
     }
 
