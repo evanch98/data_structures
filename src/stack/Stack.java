@@ -33,7 +33,13 @@ public class Stack<E extends Comparable<E>> implements List<E> {
 
     @Override
     public boolean find(E item) {
-        // TODO: Implement the find method
+        Node<E> runner = top;    // a node for traversing the list
+        while (runner != null) {
+            if (runner.getData().equals(item)) {
+                return true;
+            }
+            runner = runner.getNext();
+        }
         return false;
     }
 
