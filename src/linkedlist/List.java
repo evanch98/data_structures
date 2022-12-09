@@ -17,7 +17,6 @@ public interface List<E extends Comparable<E>> {
     public void insert(E item);
 
     /**
-     * Remove and return the removed element
      * @param item The element to be removed
      * @return true if the item is deleted successfully; false otherwise
      */
