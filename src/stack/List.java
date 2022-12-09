@@ -18,10 +18,9 @@ public interface List<E extends Comparable<E>> {
 
     /**
      * Remove the top of the list and return the removed element
-     * @param item The element to be removed
      * @return The removed element
      */
-    public E pop(E item);
+    public E pop();
 
     /**
      * Find the element in the list
