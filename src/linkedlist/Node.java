@@ -12,13 +12,13 @@ public class Node<E extends Comparable<E>> {
     /**
      * Empty constructor
      */
-    Node(){}
+    public Node(){}
 
     /**
      * Constructor with one parameter
      * @param data Set the value of data
      */
-    Node(E data) {
+    public Node(E data) {
         this.data = data;
     }
 
@@ -27,7 +27,7 @@ public class Node<E extends Comparable<E>> {
      * @param data Set the value of data
      * @param next Set the value of next
      */
-    Node(E data, Node<E> next) {
+    public Node(E data, Node<E> next) {
         this.data = data;
         this.next = next;
     }
