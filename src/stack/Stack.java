@@ -22,9 +22,13 @@ public class Stack<E extends Comparable<E>> implements List<E> {
     }
 
     @Override
-    public E pop(E item) {
-        // TODO: Implement the pop method
-        return null;
+    public E pop()  {
+        if (top == null) {
+            throw new IllegalStateException("Cannot pop from an empty stack");
+        }
+        E topIem = top.getData();    // the item that is being popped
+        top = top.getNext();         // the second item is now on top
+        return topIem;
     }
 
     @Override
