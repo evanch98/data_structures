@@ -1,5 +1,7 @@
 package linkedlist;
 
+import Nodes.Node;
+
 public class LinkedList<E extends Comparable<E>> implements List<E>{
 
     private Node<E> head;

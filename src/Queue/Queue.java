@@ -1,6 +1,6 @@
 package Queue;
 
-import linkedlist.Node;
+import Nodes.Node;
 public class Queue<E extends Comparable<E>> implements List<E> {
 
     private Node<E> head;    // the first node in the queue

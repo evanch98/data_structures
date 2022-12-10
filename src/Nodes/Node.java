@@ -1,4 +1,4 @@
-package linkedlist;
+package Nodes;
 
 /**
  * Represent the node in the LinkedList
