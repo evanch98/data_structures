@@ -11,7 +11,7 @@ public interface List<E extends Comparable<E>> {
     public void clear();
 
     /**
-     * Insert an element on top of the queue
+     * Insert an element into the last node of the queue
      * @param item The element to be inserted
      */
     public void enqueue(E item);
