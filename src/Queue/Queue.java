@@ -16,11 +16,15 @@ public class Queue<E extends Comparable<E>> implements List<E> {
 
     @Override
     public void enqueue(E item) {
-        Node<E> newTail = new Node<>(item);
+        Node<E> newTail = new Node<>(item);    // a node to hold the new item
 
         if (head == null) {
+            // If head is null, newTail is the head of the queue
+            // Since it is the only node in the queue, it will also be the tail
             head = newTail;
         } else {
+            // The last node points to the new tail
+            // The new tail is now the tail of the queue
             tail.setNext(newTail);
         }
         tail = newTail;
