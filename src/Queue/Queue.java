@@ -28,12 +28,24 @@ public class Queue<E extends Comparable<E>> implements List<E> {
             tail.setNext(newTail);
         }
         tail = newTail;
+        length++;
 
     }
 
     @Override
     public E dequeue() {
-        return null;
+        if (head == null) {
+            throw new IllegalStateException("Cannot dequeue from an empty queue");
+        }
+        E item = head.getData();    // the item of the first node
+        head = head.getNext();      // the previous second item is now the first
+                                    // if the head is the last item, then the head becomes null
+
+        if (head == null) {
+            // The queue is empty. The node that was removed was also the tail of the queue.
+            tail = null;
+        }
+        return item;
     }
 
     @Override
