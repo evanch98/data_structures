@@ -40,6 +40,7 @@ public class Queue<E extends Comparable<E>> implements List<E> {
         E item = head.getData();    // the item of the first node
         head = head.getNext();      // the previous second item is now the first
                                     // if the head is the last item, then the head becomes null
+        length--;
 
         if (head == null) {
             // The queue is empty. The node that was removed was also the tail of the queue.
