@@ -66,7 +66,16 @@ public class Queue<E extends Comparable<E>> implements List<E> {
 
     @Override
     public void traverse() {
-
+        // For the sake of simplicity, this method will only print out the item in the queue.
+        if (head == null) {
+            // If the head is null, the list empty.
+            System.out.println("The stack is empty.");
+        }
+        Node<E> runner = head;    // a node for traversing the queue
+        while (runner != null) {
+            System.out.print(runner.getData().toString() + " ");    // print out the current node item
+            runner = runner.getNext();    // move on to the next node
+        }
     }
 
     @Override
