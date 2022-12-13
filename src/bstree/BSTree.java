@@ -1,6 +1,10 @@
 package bstree;
 
+import Nodes.BinNode;
+
 public class BSTree<E extends Comparable<E>> implements BinaryTree<E> {
+
+    private BinNode<E> root;    // root of the tree
 
     @Override
     public boolean insert(E data) {
