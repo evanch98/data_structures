@@ -33,6 +33,6 @@ public class BSTree<E extends Comparable<E>> implements BinaryTree<E> {
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return root == null;
     }
 }
