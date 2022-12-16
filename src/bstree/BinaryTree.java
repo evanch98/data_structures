@@ -7,7 +7,7 @@ public interface BinaryTree<E extends Comparable<E>> {
      * @param data The element to be inserted
      * @return true if the element is inserted successfully
      */
-    public boolean insert(E data);
+    public void insert(E data);
 
     /**
      * @param data The element to be removed
