@@ -5,7 +5,6 @@ public interface BinaryTree<E extends Comparable<E>> {
     /**
      * Insert an element into the tree
      * @param data The element to be inserted
-     * @return true if the element is inserted successfully
      */
     public void insert(E data);
 
