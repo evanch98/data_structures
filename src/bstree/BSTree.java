@@ -23,7 +23,24 @@ public class BSTree<E extends Comparable<E>> implements BinaryTree<E> {
 
     @Override
     public E getMax() {
-        return null;
+        if (isEmpty()) {
+            return null;
+        }
+        return getMax(root);
+    }
+
+    /**
+     * To find the maximum value of the tree
+     * @param node The node to be checked
+     * @return The value of the node
+     */
+    private E getMax(BinNode<E> node) {
+        // The maximum value of the binary tree resides at the right most node
+        if (node.getRightChild() != null) {
+            // As long as the right child is not null,it is the node with the maximum value
+            return getMax(node.getRightChild());
+        }
+        return node.getData();
     }
 
     @Override
