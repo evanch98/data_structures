@@ -7,8 +7,8 @@ public class BSTree<E extends Comparable<E>> implements BinaryTree<E> {
     private BinNode<E> root;    // root of the tree
 
     @Override
-    public boolean insert(E data) {
-        return false;
+    public void insert(E data) {
+
     }
 
     @Override
