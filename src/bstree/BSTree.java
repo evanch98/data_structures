@@ -8,7 +8,46 @@ public class BSTree<E extends Comparable<E>> implements BinaryTree<E> {
 
     @Override
     public void insert(E data) {
+        if (isEmpty()) {
+            // If root is empty, new node is the root of the tree
+            root = new BinNode<>(data);
+        } else {
+            // Otherwise, insert it according the value of the node
+            insert(data, root);
+        }
+    }
 
+    /**
+     * Helper insert method
+     * @param data The data to be inserted
+     * @param node The node to be checked
+     */
+    private void insert(E data, BinNode<E> node) {
+        // If the data to be inserted is less than that of the current node,
+        // it should go to the left side of the node.
+        if (data.compareTo(node.getData()) < 0) {
+            // If the left child of the current node is null,
+            // the new node will be the new left child of the node.
+            if (node.getLeftChild() == null) {
+                BinNode<E> newNode = new BinNode<>(data);
+                node.setLeftChild(newNode);
+            } else {
+                // Otherwise, keep traversing the left side of the tree
+                insert(data, node.getLeftChild());
+            }
+            // If the data to be inserted is greater than that of the current node,
+            // it should go to the right side of the node.
+        } else if (data.compareTo(node.getData()) > 0) {
+            // If the right child of the current node is null,
+            // the new node will be the new right child of the node.
+            if (node.getRightChild() == null) {
+                BinNode<E> newNode = new BinNode<>(data);
+                node.setRightChild(newNode);
+            } else {
+                // Otherwise, keep traversing the right side of the tree
+                insert(data, node.getRightChild());
+            }
+        }
     }
 
     @Override
