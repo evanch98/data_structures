@@ -17,7 +17,7 @@ public class BSTree<E extends Comparable<E>> implements BinaryTree<E> {
         }
     }
 
-    /**
+    /*
      * Helper insert method
      * @param data The data to be inserted
      * @param node The node to be checked
@@ -68,7 +68,7 @@ public class BSTree<E extends Comparable<E>> implements BinaryTree<E> {
         return getMax(root);
     }
 
-    /**
+    /*
      * To find the maximum value of the tree
      * @param node The node to be checked
      * @return The value of the node
@@ -90,7 +90,7 @@ public class BSTree<E extends Comparable<E>> implements BinaryTree<E> {
         return getMin(root);
     }
 
-    /**
+    /*
      * To find the minimum value of the tree
      * @param node The node to be checked
      * @return The value of the node
