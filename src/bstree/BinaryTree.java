@@ -10,9 +10,8 @@ public interface BinaryTree<E extends Comparable<E>> {
 
     /**
      * @param data The element to be removed
-     * @return true if the element is removed successfully; false otherwise
      */
-    public boolean delete(E data);
+    public void delete(E data);
 
     /**
      * Traverse the tree

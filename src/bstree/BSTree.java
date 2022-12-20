@@ -51,8 +51,8 @@ public class BSTree<E extends Comparable<E>> implements BinaryTree<E> {
     }
 
     @Override
-    public boolean delete(E data) {
-        return false;
+    public void delete(E data) {
+
     }
 
     @Override
