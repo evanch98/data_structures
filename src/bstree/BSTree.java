@@ -52,7 +52,32 @@ public class BSTree<E extends Comparable<E>> implements BinaryTree<E> {
 
     @Override
     public void delete(E data) {
+        root = delete(data, root);
+    }
 
+    private BinNode<E> delete(E data, BinNode<E> node) {
+        if (node == null) {
+            // if node is null, return null.
+            return null;
+        }
+
+        if (data.compareTo(node.getData()) < 0) {
+            // if the data to be removed is less than the data of the current node
+            // go to the left child of the node to check
+            node.setLeftChild(delete(data, node.getLeftChild()));
+        } else if (data.compareTo(node.getData()) > 0) {
+            // otherwise, go to the right child of the node to check
+            node.setRightChild(delete(data, node.getRightChild()));
+        } else {
+            if (node.getLeftChild() == null) {
+                return node.getRightChild();
+            } else if (node.getRightChild() == null) {
+                return node.getLeftChild();
+            }
+            node.setData(getMax(node.getLeftChild()));
+            node.setLeftChild(delete(node.getData(), node.getLeftChild()));
+        }
+        return node;
     }
 
     @Override
