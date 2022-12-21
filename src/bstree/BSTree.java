@@ -89,6 +89,14 @@ public class BSTree<E extends Comparable<E>> implements BinaryTree<E> {
 
     }
 
+    private void traverseInOrder(BinNode<E> node) {
+        if (node != null) {
+            traverseInOrder(node.getLeftChild());
+            System.out.println(node.getData());
+            traverseInOrder(node.getRightChild());
+        }
+    }
+
     @Override
     public E getMax() {
         if (isEmpty()) {
