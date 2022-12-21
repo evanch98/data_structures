@@ -69,12 +69,16 @@ public class BSTree<E extends Comparable<E>> implements BinaryTree<E> {
             // otherwise, go to the right child of the node to check
             node.setRightChild(delete(data, node.getRightChild()));
         } else {
+            // If there is only one child
             if (node.getLeftChild() == null) {
                 return node.getRightChild();
             } else if (node.getRightChild() == null) {
                 return node.getLeftChild();
             }
+            // If there are two children, get the max value from the deleted node's left side
+            // After that assign the value to the node
             node.setData(getMax(node.getLeftChild()));
+            // Set the new left child of the current node
             node.setLeftChild(delete(node.getData(), node.getLeftChild()));
         }
         return node;
