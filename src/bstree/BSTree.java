@@ -89,6 +89,14 @@ public class BSTree<E extends Comparable<E>> implements BinaryTree<E> {
 
     }
 
+    private void traversePreOrder(BinNode<E> node) {
+        if (node != null) {
+            System.out.println(node.getData());
+            traversePreOrder(node.getLeftChild());
+            traversePreOrder(node.getRightChild());
+        }
+    }
+
     private void traverseInOrder(BinNode<E> node) {
         if (node != null) {
             traverseInOrder(node.getLeftChild());
