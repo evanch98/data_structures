@@ -1,6 +1,6 @@
 package bstree;
 
-import Nodes.BinNode;
+import nodes.BinNode;
 
 public class BSTree<E extends Comparable<E>> implements BinaryTree<E> {
 
