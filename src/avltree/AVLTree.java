@@ -1,18 +1,10 @@
 package avltree;
 
-<<<<<<< HEAD
-import Nodes.BinNode;
-=======
->>>>>>> e77e81d5974e3dfb0a0fe7b00eb7a19193e08441
+import nodes.BinNode;
 import bstree.BinaryTree;
 
 public class AVLTree<E extends Comparable<E>> implements BinaryTree<E> {
-
-<<<<<<< HEAD
     private BinNode<E> root;
-
-=======
->>>>>>> e77e81d5974e3dfb0a0fe7b00eb7a19193e08441
     @Override
     public void insert(E data) {
 
@@ -25,7 +17,6 @@ public class AVLTree<E extends Comparable<E>> implements BinaryTree<E> {
 
     @Override
     public void traverse() {
-<<<<<<< HEAD
         System.out.println("Preorder Traversal: ");
         traversePreOrder(root);
         System.out.println("In-order Traversal: ");
@@ -56,14 +47,10 @@ public class AVLTree<E extends Comparable<E>> implements BinaryTree<E> {
             traversePostOrder(node.getRightChild());
             System.out.println(node.getData());
         }
-=======
-
->>>>>>> e77e81d5974e3dfb0a0fe7b00eb7a19193e08441
     }
 
     @Override
     public E getMax() {
-<<<<<<< HEAD
         if (isEmpty()) {
             return null;
         }
@@ -75,14 +62,10 @@ public class AVLTree<E extends Comparable<E>> implements BinaryTree<E> {
             return getMax(node.getRightChild());
         }
         return node.getData();
-=======
-        return null;
->>>>>>> e77e81d5974e3dfb0a0fe7b00eb7a19193e08441
     }
 
     @Override
     public E getMin() {
-<<<<<<< HEAD
         if (isEmpty()) {
             return null;
         }
@@ -94,17 +77,10 @@ public class AVLTree<E extends Comparable<E>> implements BinaryTree<E> {
             return getMin(node.getLeftChild());
         }
         return node.getData();
-=======
-        return null;
->>>>>>> e77e81d5974e3dfb0a0fe7b00eb7a19193e08441
     }
 
     @Override
     public boolean isEmpty() {
-<<<<<<< HEAD
         return root == null;
-=======
-        return false;
->>>>>>> e77e81d5974e3dfb0a0fe7b00eb7a19193e08441
     }
 }
