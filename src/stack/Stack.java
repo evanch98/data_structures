@@ -1,6 +1,6 @@
 package stack;
 
-import Nodes.Node;
+import nodes.Node;
 
 public class Stack<E extends Comparable<E>> implements List<E> {
 

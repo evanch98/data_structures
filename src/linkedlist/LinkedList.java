@@ -1,6 +1,6 @@
 package linkedlist;
 
-import Nodes.Node;
+import nodes.Node;
 
 public class LinkedList<E extends Comparable<E>> implements List<E>{
 
