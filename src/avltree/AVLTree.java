@@ -1,10 +1,10 @@
 package avltree;
 
-import nodes.BinNode;
+import nodes.AVLNode;
 import bstree.BinaryTree;
 
 public class AVLTree<E extends Comparable<E>> implements BinaryTree<E> {
-    private BinNode<E> root;
+    private AVLNode<E> root;
     @Override
     public void insert(E data) {
 
@@ -25,26 +25,26 @@ public class AVLTree<E extends Comparable<E>> implements BinaryTree<E> {
         traversePostOrder(root);
     }
 
-    private void traversePreOrder(BinNode<E> node) {
+    private void traversePreOrder(AVLNode<E> node) {
         if (node != null) {
             System.out.println(node.getData());
-            traversePreOrder(node.getLeftChild());
-            traversePreOrder(node.getRightChild());
+            traversePreOrder((AVLNode<E>) node.getLeftChild());
+            traversePreOrder((AVLNode<E>) node.getRightChild());
         }
     }
 
-    private void traverseInOrder(BinNode<E> node) {
+    private void traverseInOrder(AVLNode<E> node) {
         if (node != null) {
-            traverseInOrder(node.getLeftChild());
+            traverseInOrder((AVLNode<E>) node.getLeftChild());
             System.out.println(node.getData());
-            traverseInOrder(node.getRightChild());
+            traverseInOrder((AVLNode<E>) node.getRightChild());
         }
     }
 
-    private void traversePostOrder(BinNode<E> node) {
+    private void traversePostOrder(AVLNode<E> node) {
         if (node != null) {
-            traversePostOrder(node.getLeftChild());
-            traversePostOrder(node.getRightChild());
+            traversePostOrder((AVLNode<E>) node.getLeftChild());
+            traversePostOrder((AVLNode<E>) node.getRightChild());
             System.out.println(node.getData());
         }
     }
@@ -57,9 +57,9 @@ public class AVLTree<E extends Comparable<E>> implements BinaryTree<E> {
         return getMax(root);
     }
 
-    private E getMax(BinNode<E> node) {
+    private E getMax(AVLNode<E> node) {
         if (node.getRightChild() != null) {
-            return getMax(node.getRightChild());
+            return getMax((AVLNode<E>) node.getRightChild());
         }
         return node.getData();
     }
@@ -72,9 +72,9 @@ public class AVLTree<E extends Comparable<E>> implements BinaryTree<E> {
         return getMin(root);
     }
 
-    private E getMin(BinNode<E> node) {
+    private E getMin(AVLNode<E> node) {
         if (node.getLeftChild() != null) {
-            return getMin(node.getLeftChild());
+            return getMin((AVLNode<E>) node.getLeftChild());
         }
         return node.getData();
     }
