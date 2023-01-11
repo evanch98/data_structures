@@ -23,20 +23,29 @@ public class AVLTree<E extends Comparable<E>> implements BinaryTree<E> {
         if (data.compareTo(node.getData()) < 0) {
             // If the data to be inserted is less than that of the current node,
             // it should go to the left side of the node.
-            node.setLeftChild(insert(data, (AVLNode<E>) node.getLeftChild()));
+            node.setLeftChild(insert(data, node.getLeftChild()));
         } else if (data.compareTo(node.getData()) > 0) {
             // If the data to be inserted is greater than that of the current node,
             // it should go to the right side of the node.
-            node.setRightChild(insert(data, (AVLNode<E>) node.getRightChild()));
+            node.setRightChild(insert(data, node.getRightChild()));
         } else {
             return node;
         }
-        updateHeight(node);
-        return applyRotation(node);
+        updateHeight(node);    // update the height of the node
+        return applyRotation(node);    // rotate to balance the tree
+    }
+
+    private AVLNode<E> applyRotation(AVLNode<E> node) {
+        return null;
     }
 
     private void updateHeight(AVLNode<E> node) {
+        int maxHeight = Math.max(height(node.getLeftChild()), height(node.getRightChild()));
+        node.setHeight(maxHeight + 1);
+    }
 
+    private int height(AVLNode<E> node) {
+        return node != null ? node.getHeight() : 0;
     }
 
     @Override
