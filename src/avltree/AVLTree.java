@@ -40,11 +40,14 @@ public class AVLTree<E extends Comparable<E>> implements BinaryTree<E> {
     }
 
     private void updateHeight(AVLNode<E> node) {
+        // get the maximum height between the left child and right child
+        // update the height of the node to maxHeight + 1
         int maxHeight = Math.max(height(node.getLeftChild()), height(node.getRightChild()));
         node.setHeight(maxHeight + 1);
     }
 
     private int height(AVLNode<E> node) {
+        // If node is not null, return the height of the node; otherwise, 0.
         return node != null ? node.getHeight() : 0;
     }
 
