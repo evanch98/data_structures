@@ -2,7 +2,6 @@ package nodes;
 
 public class AVLNode<E extends Comparable<E>> {
     private int height = 0;
-
     private E data;    // data of the node
     private AVLNode<E> leftChild;    // pointer to the left child
 
